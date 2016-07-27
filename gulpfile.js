@@ -10,9 +10,9 @@ var uglify = require('gulp-uglify');
 var del = require('del');
 
 var paths = {
-  sass: ['./scss/**/*.scss'],
-  move: ['./src/css/**/*.css', './src/img/**/*.*', './src/lib/**/*.*', './src/templates/**/*.html', './src/index.html'],
-  js: ['./src/js/**/*.js']
+  sass: ['scss/**/*.scss'],
+  move: ['src/css/**/*.css', 'src/img/**/*.*', 'src/lib/**/*.*', 'src/templates/**/*.html', 'src/index.html'],
+  js: ['src/js/**/*.js']
 };
 
 gulp.task('default', ['sass', 'move', 'scripts']);
@@ -34,36 +34,36 @@ function watch() {
   gulp.watch(paths.js, ['scripts']);
 }
 
-function cleanAll(cb) {
-  return del(['./www/*'], cb);
+function cleanAll() {
+  return del(['www/*', '!www/js']);
 }
 
-function cleanScript(cb) {
-  return del(['./www/js/*'], cb);
+function cleanScript() {
+  return del(['www/js/*']);
 }
 
 function move() {
-  return gulp.src(paths.move, { base: './src' })
-    .pipe(gulp.dest('./www'));
+  return gulp.src(paths.move, { base: 'src' })
+    .pipe(gulp.dest('www'));
 }
 
 function scripts() {
-  return gulp.src('./src/js/**/*.js')
+  return gulp.src('src/js/**/*.js')
     .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./www/js'))
+    .pipe(gulp.dest('www/js'))
 }
 
 function sass(done) {
-  return gulp.src('./scss/ionic.app.scss')
+  return gulp.src('scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('www/css/'))
     .on('end', done);
 }
 

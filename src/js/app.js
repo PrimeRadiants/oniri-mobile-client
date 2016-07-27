@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('app', ['ionic'])
+    .module('app', ['ionic']);
 
 })();
