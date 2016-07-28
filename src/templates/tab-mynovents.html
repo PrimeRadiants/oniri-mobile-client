@@ -1,10 +1,12 @@
 <ion-view view-title="My Novents">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="novent in novents" type="item-text-wrap" href="#/tab/store/{{novent.id}}">
-        <img ng-src="{{novent.id}}">
-        <h1>{{novent.title}}</h1>
-        <p><span ng-repeat="author in novent.authors track by $index">{{author}} </span></p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right novent-item" ng-repeat="novent in novents()" type="item-text-wrap" href="#/tab/store/{{novent.id}}">
+        <img class="cover" ng-src="http://www.creativindie.com/wp-content/uploads/2013/10/Enchantment-Book-Cover-Best-Seller1.jpg">
+        <h2>{{novent.title}}</h2>
+        <p>
+          <span class="author" ng-repeat="author in novent.authors track by $index">{{author}}<span ng-if="!$last">, </span></span>
+        </p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>

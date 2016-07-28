@@ -3,10 +3,12 @@
 
   angular
     .module('app')
-    .controller('MyNoventsCtrl', MyNoventsCtrl)
+    .controller('MyNoventsCtrl', MyNoventsCtrl);
 
-    MyNoventsCtrl.$inject = ['$scope'];
-    function MyNoventsCtrl($scope) {
+    MyNoventsCtrl.$inject = ['$scope', 'library'];
+    function MyNoventsCtrl($scope, library) {
+      library.load();
+      $scope.novents = library.all;
 
     }
 })();

@@ -1,1 +1,15 @@
-/* Empty. Add your own CSS if you like */
+/* My Novent Tab */
+.novent-item img.cover {
+  width: auto !important;
+  border-radius: 0 !important;
+  max-width: 55px !important;
+  max-height: 55px !important;
+}
+
+.novent-item h2 {
+  font-size: 25px;
+}
+
+.novent-item .author {
+  font-size: 12px;
+}
