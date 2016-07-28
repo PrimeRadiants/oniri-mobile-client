@@ -30,7 +30,7 @@
           views: {
             'tab-store': {
               templateUrl: 'templates/tab-store.html',
-              controller: 'ChatsCtrl'
+              controller: 'StoreCtrl'
             }
           }
         })
