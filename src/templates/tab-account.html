@@ -1,9 +1,18 @@
 <ion-view view-title="Account">
   <ion-content>
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+      <ion-item class="item-remove-animate item-avatar item-icon-right user-item" type="item-text-wrap">
+        <img src="img/adam.jpg">
+        <h2>{{user().username}}</h2>
+        <p>
+          <span class="email">{{user().email}}</span>
+        </p>
+      </ion-item>
+      <ion-item class="item item-divider">
+      </ion-item>
+      <ion-item class="item-remove-animate logout-item" ng-click="logout()">
+        Log out
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

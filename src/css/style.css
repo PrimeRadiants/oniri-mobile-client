@@ -13,3 +13,13 @@
 .novent-item .author {
   font-size: 12px;
 }
+
+/* Account Tab */
+.user-item h2 {
+  font-size: 25px;
+}
+
+.logout-item {
+  color: red;
+  text-align: center;
+}
