@@ -9,7 +9,14 @@
     function config($stateProvider, $urlRouterProvider) {
 
       $stateProvider
-        .state('tab', {
+
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      })
+
+      .state('tab', {
         url: '/tab',
         abstract: true,
         templateUrl: 'templates/tabs.html'
@@ -55,7 +62,7 @@
       });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/tab/mynovents');
+      $urlRouterProvider.otherwise('/login');
 
     }
 })();

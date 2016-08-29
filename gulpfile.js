@@ -11,7 +11,7 @@ var del = require('del');
 
 var paths = {
   sass: ['scss/**/*.scss'],
-  move: ['src/css/**/*.css', 'src/img/**/*.*', 'src/lib/**/*.*', 'src/templates/**/*.html', 'src/index.html'],
+  move: ['src/css/**/*.css', 'src/img/**/*.*', 'src/lib/**/*.*', 'src/templates/**/*.html', 'src/index.html', 'src/login.html'],
   js: ['src/js/**/*.js']
 };
 

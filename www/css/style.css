@@ -1,3 +1,9 @@
+/* Login Page */
+.login-container {
+  background-color: #018d67;
+  padding: 30px;
+}
+
 /* My Novent Tab */
 .novent-item img.cover {
   width: auto !important;
